@@ -13,6 +13,9 @@ import {connect} from "react-redux";
 import liveView from "../../../img/live-view.png"
 import active from "../../../img/temp-sun-active.svg";
 import sun from "../../../img/temp-sun.svg";
+import back from "../../../img/back.svg"
+import next from "../../../img/next.svg"
+import complete from "../../../img/complete.svg"
 
 const Mircod = (props) => {
     const {
@@ -28,6 +31,8 @@ const Mircod = (props) => {
         option10,
         option11,
     } = props
+    const stepCount = new Array(50)
+    console.log(stepCount)
     return (
         <div className="main__container">
             <div className='container__content'>
@@ -124,18 +129,45 @@ const Mircod = (props) => {
                                         massa nisl quis neque. Suspendisse in orci enim.
                                     </p>
                                 </div>
-                                <img src={liveView}/>
+                                <div className="live-view__img">
+                                    <img alt='' src={liveView}/>
+                                    <span>LIVE
+                                        VIEW</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="content__settings">
+                            <div className="settings__steps">
+                                <div className='steps__flex-box'>
+                                    <div className="steps__item">
+                                        <img alt='' src={complete}/>
+                                    </div>
+                                    <div className="steps__item">
+                                        <img alt='' src={complete}/>
+                                    </div>
+                                    <div className="steps__item active">
+                                        <img alt='' src={complete}/>
+                                    </div>
+                                    <div className="steps__item">
+                                    </div>
+                                </div>
+                                <span>Complete 3 steps of 4</span>
+                            </div>
+                            <div className='settings__body'>
+                                <h2>TRANSMISSION<span>DISTANCE</span></h2>
+                                <RangePicker steps={Array.from(Array(51).keys())} />
+                                <div className='body__connection'>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div className='step-btn next-page'>
+                        <img alt='' src={next}/>
+                    </div>
+                    <div className='step-btn back'>
+                        <img alt='' src={back}/>
+                    </div>
                 </div>
-                {/*<button onClick={() => {*/}
-                {/*    props.openModal({*/}
-                {/*        title: "Order Now",*/}
-                {/*        content: <h1>Hello</h1>*/}
-                {/*    })*/}
-                {/*}}>Show modal</button>*/}
-                {/*<RangePicker steps={[ 0, 500, 1000, 5000, 10000 ]} />*/}
             </div>
         </div>
     )

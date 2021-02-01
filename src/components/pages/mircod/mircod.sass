@@ -12,6 +12,7 @@ button
   & .container__options
     max-width: 1100px
   & .container__device-block
+    position: relative
     max-width: 1088px
     width: 100%
     background: white
@@ -20,10 +21,16 @@ button
     & .device-block__content
       display: flex
       & .about
+        border-radius: 10px
+        border-top-right-radius: 0
+        padding-bottom: 43px
+        max-width: 640px
+        width: 100%
         padding-top: 26px
-        background: #f25324
+        background: linear-gradient(103deg, transparent 0%, #f25324 0%, #f25324 71%, transparent 71%) 100% no-repeat
         display: flex
       & .content__choose-options
+        margin-bottom: -43px
         position: relative
         margin-top: -26px
         padding-top: 26px
@@ -59,29 +66,89 @@ button
           max-width: 180px
           text-transform: uppercase
           font-size: 20pt
-          line-height: 20px
+          line-height: 24px
           font-weight: bold
           font-family: "Proxima Nova Rg", sans-serif
           color: white
-          margin-right: 40px
+          margin-right: 24px
         & button
-          font-size: 16pt
+          font-size: 14pt
           color: white
           background: none
           border-radius: 50px
           text-transform: uppercase
-          padding: 0 25px
+          padding: 0 44px
           max-height: 44px
           border: 1px solid white
           font-family: "Proxima Nova Rg", sans-serif
       & .live-view__body
         margin-bottom: 36px
         & p
-          max-width: 310px
+          max-width: 288px
           font-size: 14pt
           color: white
           font-family: "Proxima Nova Rg", sans-serif
         & p:nth-child(1)
-          font-family: "Proxima Nova Rg", sans-serif
-          font-weight: bold
+          font-family: "Proxima Nova Bold", sans-serif
           margin-bottom: 24px
+      & .live-view__img
+        & span
+          font-family: "Proxima Nova Cn Rg", sans-serif
+          font-weight: bold
+          font-size: 36pt
+          color: white
+          display: block
+          max-width: 66px
+          line-height: 44px
+    & .content__settings
+      padding-right: 32px
+      width: 100%
+      & .settings__steps
+        float: right
+        clear: right
+        text-align: right
+        padding-top: 33px
+        margin-bottom: 56px
+        & .steps__flex-box
+          display: flex
+          margin-bottom: 14px
+        & .steps__item:last-child
+          margin-right: 0
+        & .steps__item
+          margin-right: 24px
+          padding: 1px 5px
+          max-width: 28px
+          width: 28px
+          max-height: 28px
+          height: 28px
+          border-radius: 50px
+          background: #C9CACB
+        & span
+          font-family: "Proxima Nova Rg", sans-serif
+          font-size: 14px
+      & .steps__item.active
+        background: #F14921
+      & .settings__body
+        float: left
+        clear: left
+        & h2
+          margin-bottom: 65px
+          line-height: 30px
+          max-width: 220px
+          font-size: 28pt
+          font-family: "Proxima Nova Bold", sans-serif
+          & span
+            display: block
+            color: #F75F19
+  & .step-btn
+    position: absolute !important
+    right: -80px !important
+    padding: 22px 19px 22px 34px
+    border-radius: 15px
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+    background: #CBCBCB
+  & .step-btn.next-page
+    top: 100px !important
+  & .step-btn.back
+    top: 200px !important

@@ -309,7 +309,7 @@
 }
 
 @font-face {
-	font-family: 'Proxima Nova Rg';
+	font-family: 'Proxima Nova Bold';
 	src: url('ProximaNova-Bold.eot');
 	src: local('Proxima Nova Bold'), local('ProximaNova-Bold'),
 		url('ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
@@ -397,7 +397,7 @@
 }
 
 @font-face {
-	font-family: 'Proxima Nova Th';
+	font-family: 'c';
 	src: url('ProximaNova-ExtrabldIt.eot');
 	src: local('Proxima Nova Extrabold Italic'), local('ProximaNova-ExtrabldIt'),
 		url('ProximaNova-ExtrabldIt.eot?#iefix') format('embedded-opentype'),
