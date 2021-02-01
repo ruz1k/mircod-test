@@ -7,6 +7,8 @@ const connection = (state, action) => {
             connection4: false,
             connection5: false,
             connection6: false,
+            connection7: false,
+            connection8: false,
         }
     }
     switch (action.type) {
@@ -39,6 +41,16 @@ const connection = (state, action) => {
             return {
                 ...state,
                 connection6: !state.connection6
+            }
+        case "CONNECTION7":
+            return {
+                ...state,
+                connection7: !state.connection7
+            }
+        case "CONNECTION8":
+            return {
+                ...state,
+                connection8: !state.connection8
             }
         default:
             return state

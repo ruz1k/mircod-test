@@ -34,11 +34,25 @@ const connectionSelected6 = () => {
     }
 }
 
+const connectionSelected7 = () => {
+    return {
+        type: "CONNECTION7"
+    }
+}
+
+const connectionSelected8 = () => {
+    return {
+        type: "CONNECTION8"
+    }
+}
+
 export {
     connectionSelected1,
     connectionSelected2,
     connectionSelected3,
     connectionSelected4,
     connectionSelected5,
-    connectionSelected6
+    connectionSelected6,
+    connectionSelected7,
+    connectionSelected8,
 }

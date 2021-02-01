@@ -13,6 +13,9 @@
 
 .slick-prev
   left: -40px !important
+  @media screen and (max-width: 1300px)
+    left: -30px !important
+
 
 .slick-arrow.slick-next:before
   content: ''
@@ -67,3 +70,7 @@
     font-family: "Proxima Nova Rg", sans-serif
   & .form__item
     margin-bottom: 16px
+
+@media screen and (max-width: 1300px)
+  .slick-next
+    right: -40px !important
