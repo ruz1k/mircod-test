@@ -4,9 +4,18 @@ import Carousel from '../../carousel/carousel'
 import RangePicker from "../../range/range";
 
 import './mircod.sass'
+import Fade from 'react-reveal/Fade';
 import {DatePicker, Input, Select} from "antd";
 
 import {openModal} from "../../actions/modal";
+import {
+    connectionSelected1,
+    connectionSelected2,
+    connectionSelected3,
+    connectionSelected4,
+    connectionSelected5,
+    connectionSelected6,
+} from "../../actions/connection";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 
@@ -16,9 +25,11 @@ import sun from "../../../img/temp-sun.svg";
 import back from "../../../img/back.svg"
 import next from "../../../img/next.svg"
 import complete from "../../../img/complete.svg"
+import connection from "../../../img/connection.svg"
 
 const Mircod = (props) => {
     const {
+        value,
         option1,
         option2,
         option3,
@@ -30,9 +41,15 @@ const Mircod = (props) => {
         option9,
         option10,
         option11,
+        connection1,
+        connection2,
+        connection3,
+        connection4,
+        connection5,
+        connection6
     } = props
+    /// Длина дистанции
     const stepCount = new Array(50)
-    console.log(stepCount)
     return (
         <div className="main__container">
             <div className='container__content'>
@@ -112,28 +129,33 @@ const Mircod = (props) => {
                                     </button>
                                 </div>
                                 <div className="live-view__body">
-                                    <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat
+                                    <p>Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae
+                                        erat
                                         consequat
-                                        auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia
+                                        auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per
+                                        conubia
                                         nostra,
                                         per i
                                     </p>
                                     <p>
                                         nceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus
-                                        condimentum
-                                        sit
-                                        amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum
-                                        fermentum
-                                        nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut
-                                        aliquam
-                                        massa nisl quis neque. Suspendisse in orci enim.
+                                        condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.
+                                        Proin
+                                        condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat,
+                                        velit
+                                        mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci
+                                        enim.
                                     </p>
                                 </div>
-                                <div className="live-view__img">
-                                    <img alt='' src={liveView}/>
-                                    <span>LIVE
+                                {connection1 || connection2 || connection3 || connection4 || connection5 || connection6 === true && value !== 0 ?
+                                    <Fade top>
+                                        <div className="live-view__img">
+                                            <img alt='' src={liveView}/>
+                                            <span>LIVE
                                         VIEW</span>
-                                </div>
+                                        </div>
+                                    </Fade> : <></>
+                                }
                             </div>
                         </div>
                         <div className="content__settings">
@@ -155,16 +177,47 @@ const Mircod = (props) => {
                             </div>
                             <div className='settings__body'>
                                 <h2>TRANSMISSION<span>DISTANCE</span></h2>
-                                <RangePicker steps={Array.from(Array(51).keys())} />
+                                <RangePicker steps={Array.from(Array(51).keys())}/>
                                 <div className='body__connection'>
+                                    <p>CHOOSE <span>TYPE OF CONNECTION</span></p>
+                                    <div className="connection__container">
+                                        {connection1 || connection2 || connection3 || connection4 || connection5 || connection6 === false ?
+                                            <>
+                                                <button onClick={props.connectionSelected1} className="container__item">
+                                                    <img src={connection} alt=''/>
+                                                </button>
+                                                <button onClick={props.connectionSelected1} className="container__item">
+                                                    <img src={connection} alt=''/>
+                                                </button>
+                                                <button onClick={props.connectionSelected1} className="container__item">
+                                                    <img src={connection} alt=''/>
+                                                </button>
+                                                <button onClick={props.connectionSelected1} className="container__item">
+                                                    <img src={connection} alt=''/>
+                                                </button>
+                                                <button onClick={props.connectionSelected1} className="container__item">
+                                                    <img src={connection} alt=''/>
+                                                </button>
+                                                <button onClick={props.connectionSelected1} className="container__item">
+                                                    <img src={connection} alt=''/>
+                                                </button>
+                                                <button onClick={props.connectionSelected1} className="container__item">
+                                                    <img src={connection} alt=''/>
+                                                </button>
+                                                <button onClick={props.connectionSelected1} className="container__item">
+                                                    <img src={connection} alt=''/>
+                                                </button>
+                                            </>
+                                            : <span>None</span>}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className='step-btn next-page'>
+                    <div className='step-btn next-page valid'>
                         <img alt='' src={next}/>
                     </div>
-                    <div className='step-btn back'>
+                    <div className='step-btn back disable'>
                         <img alt='' src={back}/>
                     </div>
                 </div>
@@ -195,22 +248,35 @@ const OrderNow = () => {
     )
 }
 
-const mapStateToProps = ({
-                             options: {
-                                 option1,
-                                 option2,
-                                 option3,
-                                 option4,
-                                 option5,
-                                 option6,
-                                 option7,
-                                 option8,
-                                 option9,
-                                 option10,
-                                 option11,
-                             }
-                         }) => {
+const mapStateToProps = (
+    {
+        options: {
+            option1,
+            option2,
+            option3,
+            option4,
+            option5,
+            option6,
+            option7,
+            option8,
+            option9,
+            option10,
+            option11,
+        },
+        connection: {
+            connection1,
+            connection2,
+            connection3,
+            connection4,
+            connection5,
+            connection6,
+        },
+        range: {
+            value
+}
+    }) => {
     return {
+        value,
         option1,
         option2,
         option3,
@@ -222,6 +288,12 @@ const mapStateToProps = ({
         option9,
         option10,
         option11,
+        connection1,
+        connection2,
+        connection3,
+        connection4,
+        connection5,
+        connection6,
     };
 };
 
@@ -229,6 +301,12 @@ const mapDispatchToProps = (dispatch) => {
     return bindActionCreators(
         {
             openModal,
+            connectionSelected1,
+            connectionSelected2,
+            connectionSelected3,
+            connectionSelected4,
+            connectionSelected5,
+            connectionSelected6,
         },
         dispatch
     );
