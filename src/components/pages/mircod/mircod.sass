@@ -1,0 +1,87 @@
+button
+  outline: none
+  border: none
+  cursor: pointer
+
+.main__container
+  background: #f6f6f6
+  padding-top: 57px
+  & .container__content
+    max-width: 1170px
+    margin: 0 auto
+  & .container__options
+    max-width: 1100px
+  & .container__device-block
+    max-width: 1088px
+    width: 100%
+    background: white
+    border-radius: 10px
+    margin-bottom: 105px
+    & .device-block__content
+      display: flex
+      & .about
+        padding-top: 26px
+        background: #f25324
+        display: flex
+      & .content__choose-options
+        position: relative
+        margin-top: -26px
+        padding-top: 26px
+        padding-left: 26px
+        padding-right: 48px
+        max-width: 140px
+        margin-right: 40px
+        box-shadow: 0 8px 16px rgba(0,0,0,.2)
+        & .option.unchoosen
+          display: none
+        & .option.choosen
+          & .option__img
+            box-shadow: 0 0 10px 0 rgba(0,0,0,.2)
+            max-width: 54px
+            max-height: 54px
+            height: 54px
+            padding-top: 16px
+            background: #f25324
+            margin-bottom: 20px
+        & p
+          font-family: "Proxima Nova Rg", sans-serif
+          text-transform: uppercase
+          color: white
+          max-width: 66px
+          font-size: 14pt
+          margin-bottom: 38px
+          & span
+            font-family: "Proxima Nova Bl", sans-serif
+      & .live-view__header
+        display: flex
+        margin-bottom: 48px
+        & h1
+          max-width: 180px
+          text-transform: uppercase
+          font-size: 20pt
+          line-height: 20px
+          font-weight: bold
+          font-family: "Proxima Nova Rg", sans-serif
+          color: white
+          margin-right: 40px
+        & button
+          font-size: 16pt
+          color: white
+          background: none
+          border-radius: 50px
+          text-transform: uppercase
+          padding: 0 25px
+          max-height: 44px
+          border: 1px solid white
+          font-family: "Proxima Nova Rg", sans-serif
+      & .live-view__body
+        margin-bottom: 36px
+        & p
+          max-width: 310px
+          font-size: 14pt
+          color: white
+          font-family: "Proxima Nova Rg", sans-serif
+        & p:nth-child(1)
+          font-family: "Proxima Nova Rg", sans-serif
+          font-weight: bold
+          margin-bottom: 24px

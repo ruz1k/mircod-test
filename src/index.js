@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import './fonts/fonts.css'
 import App from './components/app/app';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import {Provider} from "react-redux";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 

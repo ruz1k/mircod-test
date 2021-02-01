@@ -1,0 +1,69 @@
+.slick-arrow.slick-prev:before
+  content: ''
+  color: black
+  background: url("../../img/left.svg") no-repeat
+  display: block
+  max-width: 11px
+  width: 11px
+  max-height: 22px
+  height: 22px
+
+.slick-arrow
+  top: 35% !important
+
+.slick-prev
+  left: -40px !important
+
+.slick-arrow.slick-next:before
+  content: ''
+  color: black
+  background: url("../../img/left.svg") no-repeat
+  transform: rotate(180deg)
+  display: block
+  max-width: 11px
+  width: 11px
+  max-height: 22px
+  height: 22px
+.container__options
+  margin-bottom: 66px
+  & .option
+    max-width: 78px
+    & .option__img
+      background: white
+      max-width: 78px
+      max-height: 78px
+      height: 78px
+      padding: 26px 29px
+  .option.active
+    & .option__img
+      background: #f25324
+    & span
+      color: #2A2A2B
+
+.option
+  text-align: center
+  & .option__img
+    border-radius: 50px
+    margin-bottom: 8px
+  & span
+    font-size: 12pt
+    font-family: "Proxima Nova Rg", sans-serif
+    color: #acb9b4
+    display: block
+
+.option.add-custom
+  & .option__img
+    border: 2px solid #f25324
+    padding: 0 16px
+
+.modal-form
+  & button
+    background: #f25324
+    text-transform: uppercase
+    color: white
+    font-size: 14pt
+    max-width: 122px
+    width: 100%
+    font-family: "Proxima Nova Rg", sans-serif
+  & .form__item
+    margin-bottom: 16px

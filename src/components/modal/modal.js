@@ -1,30 +1,32 @@
-import React, { Component } from "react";
-import { Button, Modal } from "antd";
-import { connect } from "react-redux";
+import React from "react";
+
+import {Button, Modal} from "antd";
+import "./modal.sass"
+
+import {connect} from "react-redux";
 import {openModal} from "../actions/modal";
 
-class ModalBlock extends Component {
-    render() {
-        const { openModal, visible, title = "", content } = this.props;
-
-        return (
-            <Modal
-                title={title}
-                onCancel={openModal}
-                visible={visible}
-                footer={
-                    <Button onClick={openModal} style={{ marginRight: 8 }}>
+const ModalBlock = (props) => {
+    const {openModal, visible, title = "", content} = props;
+    return (
+        <Modal
+            title={title}
+            onCancel={openModal}
+            visible={visible}
+            footer={
+                <>
+                    <Button onClick={openModal} style={{marginRight: 8}}>
                         Cancel
                     </Button>
-                }
-            >
-                {content}
-            </Modal>
-        );
-    }
+                </>
+            }
+        >
+            {content}
+        </Modal>
+    );
 }
 
-const mapStateToProps = ({ modal: { visible, title, content } }) => {
+const mapStateToProps = ({modal: {visible, title, content}}) => {
     return {
         visible,
         title,
@@ -32,8 +34,9 @@ const mapStateToProps = ({ modal: { visible, title, content } }) => {
     };
 };
 
-const mapDispatchProps = {
-    openModal,
-};
+const mapDispatchProps =
+    {
+        openModal,
+    };
 
 export default connect(mapStateToProps, mapDispatchProps)(ModalBlock);
