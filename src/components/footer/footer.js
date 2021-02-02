@@ -8,6 +8,7 @@ import twitter from "../../img/twitter.svg"
 import facebook from "../../img/facebook.svg"
 import youtubeLogo from "../../img/youtube-logo.svg"
 import google from "../../img/google.svg"
+import toTop from "../../img/to-top.svg"
 import {Link} from "react-router-dom";
 
 const Footer = () => {
@@ -64,6 +65,13 @@ const Footer = () => {
                         <Link to='./'>
                             About us
                         </Link>
+                        <button onClick={ () => {
+                            document.body.scrollTop = 0
+                            document.documentElement.scrollTop = 0
+                        }
+                        }>
+                            <img src={toTop} alt='' width="11" height='11'/>
+                        </button>
                     </div>
                 </div>
             </div>

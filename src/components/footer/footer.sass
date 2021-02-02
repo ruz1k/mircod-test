@@ -45,7 +45,7 @@ footer
     display: block
     font-size: 12px
   & span
-    margin-right: 328px
+    margin-right: 300px
   & a
     margin-right: 16px
   & a:last-child
@@ -54,8 +54,18 @@ footer
     margin-right: 420px
 .bottom__content
   display: flex
+  position: relative
   max-width: 1170px
   margin: 0 auto
+  & button
+    background: #F14921
+    position: absolute
+    right: 0
+    top: -40px
+    & img
+      position: relative
+      top: -2px
+      transform: rotate(-90deg)
 
 @media screen and (max-width: 1300px)
   .container__content-footer
@@ -66,6 +76,8 @@ footer
   .container__bottom
     & span
       margin-right: 200px !important
+    & a,span
+      font-size: 11px
   .bottom__content
     max-width: 900px !important
   .container__bottom a:nth-of-type(4)
